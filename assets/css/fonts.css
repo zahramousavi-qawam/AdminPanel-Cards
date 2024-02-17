@@ -1,0 +1,15 @@
+@font-face {
+    font-family: "morabba";
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/Morabba-Light.woff') format('woff');
+}
+@font-face {
+    font-family: "morabba";
+    font-weight: 900;
+    font-style: normal;
+    src: url('../fonts/Morabba-Bold.woff') format('woff');
+}
+body{
+    font-family: "morabba";
+}

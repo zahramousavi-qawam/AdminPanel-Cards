@@ -1,0 +1,169 @@
+/*CSS Reset*/
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    /* list-style: none; */
+}
+:root{
+    --color-btn:#219F95;
+    --color-link:#234894;
+    --color-span:#696969;
+    --color-headings:#1E1E1E;
+    --color-headings-light:#FFFFFF;
+    --color-span-bg:#AFCEDD;
+    --color-body:#333333;
+    --border-radius:5px;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    color: var(--color-body);
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    font-family: "morabba";
+}
+h1,h2,h3{
+    color: var(--color-headings);
+}
+h1{
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    font-weight: 900;
+}
+h2{
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+}
+h3{
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+a{
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--color-link);
+    display: block;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+a:hover{
+    color: #234994b7;
+}
+/************************ Container ************************/
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+/************************ Cards ************************/
+.cards{
+    background-color: var(--color-headings-light);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+}
+.cards__items{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 2rem;
+}
+.cards__item{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    background-color:var(--color-headings-light);
+    padding: 10px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-span-bg);
+}
+.cards__header ,
+.cards__documents{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cards__documents a{
+    font-size: 1.6rem;
+    font-weight: lighter;
+}
+.cards__person {
+    display: flex;
+    align-items: center;
+}
+.cards__header{
+    grid-column: 1/ span 2;
+}
+.cards__number{
+    background-color: var(--color-span-bg);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    margin-left: 1rem;
+    color: var(--color-link);
+    font-weight: 900;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+}
+.cards__request {
+    display: flex;
+    grid-column: 1/ span 2;
+    flex-direction: column;
+    align-items: center;
+}
+.cards__request__title{
+    margin-bottom: 1rem;
+}
+.cards__span{
+    color: var(--color-span);
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.8rem;
+}
+.cards__person img{
+    width: 30px;
+    height: 30px;
+    border-radius: var(--border-radius);
+    margin-left: 1rem;
+    object-fit: cover;
+}
+.cards__btn {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    grid-column: 1/ span 2;
+}
+.cards__btn a{
+    width: 111px;
+    padding: 1.5rem 0.5rem;
+    background-color: var(--color-btn);
+    color: var(--color-headings-light);
+    border-radius: var(--border-radius);
+    margin: auto;
+    text-align: center;
+    transition: all 0.3s ease-in;
+}
+.cards__btn a:hover{
+    background-color: #219f95bd;
+}
+/************************ Responsive Cards ************************/
+@media screen and (min-width: 640px) {
+    .cards__items{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .cards__request {
+        grid-column: 1;
+        align-items: flex-start;
+    }
+    .cards__btn {
+        grid-column: 2;
+    }
+    .cards__btn a{
+        margin: 0;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .cards__items{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
